@@ -35,8 +35,6 @@ F 3 "" H 9475 1200 50  0001 C CNN
 	1    9475 1200
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	9700 1600 9475 1600
 $Comp
 L power:GND #PWR0102
 U 1 1 60821E25
@@ -48,10 +46,6 @@ F 3 "" H 9100 1775 50  0001 C CNN
 	1    9100 1775
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	9100 1775 9100 1700
-Wire Wire Line
-	9100 1700 9700 1700
 Text Label 9725 2650 2    50   ~ 0
 LRCLK
 Text Label 9725 2550 2    50   ~ 0
@@ -132,23 +126,19 @@ F 3 "" H 3300 6350 50  0001 C CNN
 	1    3300 6350
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3300 5200 3300 5500
-Wire Wire Line
-	3700 5700 4225 5700
 Text Label 3700 5800 0    50   ~ 0
 PDM_CLK
-Text Label 3700 5900 0    50   ~ 0
+Text Label 4650 5900 0    50   ~ 0
 PDM_DAT
 $Comp
-L Device:C C1
+L Device:C C2
 U 1 1 60838268
-P 9100 1550
-F 0 "C1" H 9215 1596 50  0000 L CNN
-F 1 "0.1uF" H 9215 1505 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0402_1005Metric" H 9138 1400 50  0001 C CNN
-F 3 "~" H 9100 1550 50  0001 C CNN
-	1    9100 1550
+P 950 2850
+F 0 "C2" H 1065 2896 50  0000 L CNN
+F 1 "0.1uF" H 1065 2805 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 988 2700 50  0001 C CNN
+F 3 "~" H 950 2850 50  0001 C CNN
+	1    950  2850
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -215,29 +205,109 @@ F 3 "~" H 9925 3300 50  0001 C CNN
 	1    9925 3300
 	1    0    0    -1  
 $EndComp
-Connection ~ 9100 1700
 Wire Wire Line
-	9475 1200 9475 1350
-Wire Wire Line
-	9100 1400 9100 1350
-Wire Wire Line
-	9100 1350 9475 1350
-Connection ~ 9475 1350
-Wire Wire Line
-	9475 1350 9475 1600
-Wire Wire Line
-	3300 6100 3300 6350
+	3300 6100 3300 6225
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0107
 U 1 1 608B38B3
-P 4225 6350
-F 0 "#PWR?" H 4225 6100 50  0001 C CNN
-F 1 "GND" H 4230 6177 50  0000 C CNN
-F 2 "" H 4225 6350 50  0001 C CNN
-F 3 "" H 4225 6350 50  0001 C CNN
-	1    4225 6350
+P 9100 5425
+F 0 "#PWR0107" H 9100 5175 50  0001 C CNN
+F 1 "GND" H 9105 5252 50  0000 C CNN
+F 2 "" H 9100 5425 50  0001 C CNN
+F 3 "" H 9100 5425 50  0001 C CNN
+	1    9100 5425
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:SolderJumper_3_Open JP1
+U 1 1 608B7C15
+P 9100 4775
+F 0 "JP1" V 9054 4843 50  0000 L CNN
+F 1 "SolderJumper_3_Open" V 9145 4843 50  0000 L CNN
+F 2 "custom:SolderJumper-3_P0.635mm_Open_RoundedPad1.0x1.5mm" H 9100 4775 50  0001 C CNN
+F 3 "~" H 9100 4775 50  0001 C CNN
+	1    9100 4775
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9100 4975 9100 5425
+Wire Wire Line
+	3300 5200 3300 5400
+$Comp
+L power:VDD #PWR0108
+U 1 1 608C22C9
+P 9100 4200
+F 0 "#PWR0108" H 9100 4050 50  0001 C CNN
+F 1 "VDD" H 9115 4373 50  0000 C CNN
+F 2 "" H 9100 4200 50  0001 C CNN
+F 3 "" H 9100 4200 50  0001 C CNN
+	1    9100 4200
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4225 5700 4225 6350
+	9100 4200 9100 4575
+Text Label 8950 4775 2    50   ~ 0
+LRSELECT
+Text Label 3700 5700 0    50   ~ 0
+LRSELECT
+Wire Wire Line
+	950  2700 950  2625
+Connection ~ 950  2625
+Wire Wire Line
+	950  3000 950  3150
+Wire Wire Line
+	950  3150 2450 3150
+Wire Wire Line
+	9225 1850 9100 1850
+Wire Wire Line
+	9100 1700 9100 1775
+Connection ~ 9100 1775
+Wire Wire Line
+	9100 1775 9100 1850
+Wire Wire Line
+	9700 1700 9100 1700
+Wire Wire Line
+	9700 1600 9475 1600
+Wire Wire Line
+	9475 1600 9475 1200
+$Comp
+L Device:C C1
+U 1 1 608D1EEB
+P 2175 5825
+F 0 "C1" H 2290 5871 50  0000 L CNN
+F 1 "100nF" H 2290 5780 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 2213 5675 50  0001 C CNN
+F 3 "~" H 2175 5825 50  0001 C CNN
+	1    2175 5825
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2175 5675 2175 5400
+Connection ~ 3300 5400
+Wire Wire Line
+	3300 5400 3300 5500
+Wire Wire Line
+	2175 5975 2175 6225
+Connection ~ 3300 6225
+Wire Wire Line
+	3300 6225 3300 6350
+Wire Wire Line
+	2175 5400 3300 5400
+Wire Wire Line
+	2175 6225 3300 6225
+$Comp
+L Device:R R2
+U 1 1 608E6240
+P 4275 5900
+F 0 "R2" V 4068 5900 50  0000 C CNN
+F 1 "100" V 4159 5900 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 4205 5900 50  0001 C CNN
+F 3 "~" H 4275 5900 50  0001 C CNN
+	1    4275 5900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4125 5900 3700 5900
+Wire Wire Line
+	4425 5900 4650 5900
 $EndSCHEMATC
